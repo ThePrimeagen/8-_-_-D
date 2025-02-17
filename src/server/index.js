@@ -190,7 +190,17 @@ wss.on('connection', (socket) => {
   // 📨 Message Handler
   socket.on('message', (msg) => {
     const { type, data } = JSON.parse(msg);
-    handlePlayerInput(playerId, type, data);
+    if (type === 'restart') {
+      gameState.board = Array(20).fill().map(() => Array(10).fill(0));
+      gameState.currentPiece = getRandomPiece();
+      gameState.players.get(playerId).score = 0;
+      if (!gameState.gameLoop) {
+        startGameLoop();
+      }
+      broadcastGameState();
+    } else {
+      handlePlayerInput(playerId, type, data);
+    }
   });
 
   // 👋 Disconnect Handler
