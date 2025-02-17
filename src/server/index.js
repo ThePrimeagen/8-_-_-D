@@ -34,11 +34,17 @@ app.use(express.static(path.join(__dirname, '../../public'), {
 
 // 🎮 Game Logic
 const updateGameState = (board, piece, movement) => {
-  // Update game state based on movement
-  return { ...board, piece: { ...piece, ...movement } };
+  // Only update piece position, not board structure
+  const newPiece = { ...piece, ...movement };
+  return { board, piece: newPiece };
 };
 
 const broadcastGameState = () => {
+  if (!Array.isArray(gameState.board) || !gameState.currentPiece) {
+    console.error('Invalid game state:', gameState);
+    return;
+  }
+
   const gameStateUpdate = {
     board: gameState.board,
     currentPiece: gameState.currentPiece
@@ -60,31 +66,27 @@ const handlePlayerInput = (playerId, type, data) => {
   switch (type) {
     case 'move':
       if (data.direction) {
-        gameState.board = updateGameState(
-          gameState.board,
-          gameState.currentPiece,
-          { x: data.direction === 'left' ? -1 : 1 }
-        );
-        broadcastGameState();
+        const moveX = data.direction === 'left' ? -1 : 1;
+        if (!checkCollision(gameState.board, gameState.currentPiece, moveX, 0)) {
+          gameState.currentPiece.x += moveX;
+          broadcastGameState();
+        }
       }
       break;
     case 'rotate':
       if (data.direction) {
-        gameState.board = updateGameState(
-          gameState.board,
-          gameState.currentPiece,
-          { rotation: data.direction === 'left' ? -90 : 90 }
-        );
-        broadcastGameState();
+        const rotated = rotatePiece(gameState.currentPiece);
+        if (!checkCollision(gameState.board, rotated, 0, 0)) {
+          gameState.currentPiece = rotated;
+          broadcastGameState();
+        }
       }
       break;
     case 'drop':
-      gameState.board = updateGameState(
-        gameState.board,
-        gameState.currentPiece,
-        { y: 1 }
-      );
-      broadcastGameState();
+      if (!checkCollision(gameState.board, gameState.currentPiece, 0, 1)) {
+        gameState.currentPiece.y++;
+        broadcastGameState();
+      }
       break;
   }
 };

@@ -65,7 +65,11 @@ class Game {
   handleServerMessage(type, data) {
     switch(type) {
       case 'gameState':
-        this.updateBoard(data.board);
+        if (data && data.board) {
+          this.updateBoard(data.board);
+        } else {
+          console.error('Invalid game state data received:', data);
+        }
         break;
       case 'gameOver':
         this.handleGameOver(data);
