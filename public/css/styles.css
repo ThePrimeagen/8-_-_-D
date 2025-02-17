@@ -1,0 +1,41 @@
+@keyframes mouseJump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes cheeseGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+.cheese-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cheese-container object {
+  width: 420px;
+  height: 420px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.cheese-container object:hover {
+  border-color: #FFD700;
+}
+
+.cheese-svg {
+  width: 420px;
+  height: 420px;
+}
+
+.mouse-animation {
+  animation: mouseJump 1s ease-in-out infinite;
+}
+
+.cheese-glow {
+  animation: cheeseGlow 2s ease-in-out infinite;
+}
