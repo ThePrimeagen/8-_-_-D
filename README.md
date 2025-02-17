@@ -23,6 +23,32 @@ Set sail on a high-seas adventure with \"Bussy Pirate Tetris Extravaganza,\" a w
 
 So, grab your eye patches and banana peels, and let's create a masterpiece that will leave everyone questioning their reality. Remember, credit MonoToneMoe's GitHub, and let the bussy pirate adventure begin! 🏴‍☠️🍌
 
+## Running the WASM ASCII Art
+To view our handsome ASCII art man:
+
+1. Install Emscripten:
+```bash
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+./emsdk install latest
+./emsdk activate latest
+source ./emsdk_env.sh
+```
+
+2. Build the WASM:
+```bash
+cd src/wasm
+emcc handsome.c -o handsome.html -s NO_EXIT_RUNTIME=1 -s "EXPORTED_RUNTIME_METHODS=['ccall']"
+```
+
+3. Start the server:
+```bash
+npm install
+npm start
+```
+
+4. View the ASCII art at: http://localhost:3000/wasm.html
+
 ## Credits
 Special thanks to:
 - **MonoToneMoe** - For providing the inspiration for this project through their GitHub work
