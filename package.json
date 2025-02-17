@@ -1,0 +1,19 @@
+{
+  "name": "8-_-_-d",
+  "version": "1.0.0",
+  "description": "Alright, you magnificent chaos enthusiasts, buckle up because we're about to embark on a journey of unhinged creativity. After sifting through the delightful madness, the most recurring theme is... 🏴‍☠️ Pirate Tetris with a Bussy Twist 🏴‍☠️. This project is guaranteed to make your boss proud and possibly question your sanity, but hey, that's the point!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePrimeagen/8-_-_-D.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThePrimeagen/8-_-_-D/issues"
+  },
+  "homepage": "https://github.com/ThePrimeagen/8-_-_-D#readme"
+}
