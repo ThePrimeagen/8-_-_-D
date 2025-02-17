@@ -41,7 +41,16 @@ cd 8-_-_-D
 npm install
 ```
 
-3. Start the server:
+3. Build the client bundle:
+```bash
+# Build the client-side JavaScript bundle
+npm run build:client
+
+# Watch for changes during development (optional)
+npm run build:client -- --watch
+```
+
+4. Start the server:
 ```bash
 npm start
 ```
