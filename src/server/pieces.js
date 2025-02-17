@@ -87,6 +87,11 @@ export const rotatePiece = (piece) => {
 
 // 💥 Check collision
 export const checkCollision = (board, piece, moveX = 0, moveY = 0) => {
+  if (!board || !piece || !piece.shape) {
+    console.error('Invalid board or piece data:', { board, piece });
+    return true;
+  }
+
   const { shape, x, y } = piece;
   
   for (let row = 0; row < shape.length; row++) {
@@ -97,9 +102,10 @@ export const checkCollision = (board, piece, moveX = 0, moveY = 0) => {
         
         if (
           newX < 0 || 
+          !board[0] || 
           newX >= board[0].length ||
           newY >= board.length ||
-          (newY >= 0 && board[newY][newX])
+          (newY >= 0 && board[newY] && board[newY][newX])
         ) {
           return true;
         }

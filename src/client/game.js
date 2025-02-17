@@ -78,10 +78,21 @@ class Game {
 
   // 🔄 Update Board
   updateBoard(board) {
+    if (!Array.isArray(board)) {
+      console.error('Invalid board data received:', board);
+      return;
+    }
+    
     board.forEach((row, y) => {
+      if (!Array.isArray(row)) {
+        console.error('Invalid row data received:', row);
+        return;
+      }
       row.forEach((cell, x) => {
-        this.cells[y][x].style.backgroundColor = cell || '';
-        this.cells[y][x].classList.toggle('filled', !!cell);
+        if (this.cells[y] && this.cells[y][x]) {
+          this.cells[y][x].style.backgroundColor = cell || '';
+          this.cells[y][x].classList.toggle('filled', !!cell);
+        }
       });
     });
   }
