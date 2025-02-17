@@ -23,6 +23,51 @@ Set sail on a high-seas adventure with \"Bussy Pirate Tetris Extravaganza,\" a w
 
 So, grab your eye patches and banana peels, and let's create a masterpiece that will leave everyone questioning their reality. Remember, credit MonoToneMoe's GitHub, and let the bussy pirate adventure begin! 🏴‍☠️🍌
 
+## Build Instructions
+
+### Prerequisites
+- Node.js v18+ (recommended v18.19.1)
+- npm or yarn
+
+### Setup and Run
+1. Clone the repository:
+```bash
+git clone https://github.com/ThePrimeagen/8-_-_-D.git
+cd 8-_-_-D
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the server:
+```bash
+npm start
+```
+
+4. Open in browser:
+- Multiplayer Tetris: http://localhost:3000
+- ASCII Art Viewer: http://localhost:3000/wasm.html
+
+### WASM ASCII Art Build (Optional)
+If you want to rebuild the WASM component:
+
+1. Install Emscripten:
+```bash
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+./emsdk install latest
+./emsdk activate latest
+source ./emsdk_env.sh
+```
+
+2. Build WASM:
+```bash
+cd src/wasm
+emcc handsome.c -o handsome.html -s NO_EXIT_RUNTIME=1 -s "EXPORTED_RUNTIME_METHODS=['ccall']"
+```
+
 ## ASCII Art Gallery
 ```
     /\___/\   🧀
