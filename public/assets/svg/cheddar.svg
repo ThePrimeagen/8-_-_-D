@@ -1,0 +1,33 @@
+<!-- 🧀 Cheddar Cheese SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" class="cheese-svg">
+  <defs>
+    <!-- 🎨 Cheese styling -->
+    <style>
+      .cheese-body { fill: #FFA500; }
+      .cheese-highlight { fill: #FFD700; opacity: 0.3; }
+      .mouse-body { fill: #808080; }
+      .mouse-ear { fill: #696969; }
+      .mouse-eye { fill: #000000; }
+      .mouse-smile { fill: none; stroke: #000000; stroke-width: 2; }
+      .pirate-patch { fill: #000000; }
+    </style>
+  </defs>
+  
+  <!-- 🧀 Cheddar block with pirate theme -->
+  <g class="cheese-glow">
+    <path class="cheese-body" d="M80,80 l260,0 l-20,260 l-260,0 Z"/>
+    <path class="cheese-highlight" d="M100,100 l200,0 l-10,50 l-200,0 Z"/>
+    <!-- 🏴‍☠️ Pirate bandana -->
+    <path class="pirate-patch" d="M120,120 l40,-10 l10,20 l-40,10 Z"/>
+  </g>
+  
+  <!-- 🐭 Ecstatic mouse -->
+  <g class="mouse-animation" transform="translate(280,280)">
+    <ellipse class="mouse-body" cx="0" cy="0" rx="25" ry="20"/>
+    <circle class="mouse-ear" cx="-15" cy="-15" r="10"/>
+    <circle class="mouse-ear" cx="15" cy="-15" r="10"/>
+    <circle class="mouse-eye" cx="-8" cy="-5" r="3"/>
+    <circle class="mouse-eye" cx="8" cy="-5" r="3"/>
+    <path class="mouse-smile" d="M-10,5 Q0,15 10,5"/>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+/* 🧀 Cheese SVG Container Styles */
+.cheese-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px;
+  background: #FFF8E7; /* 🍶 Creamy background */
+  border: 8px solid #8B4513; /* 🏴‍☠️ Pirate-themed border */
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(139, 69, 19, 0.2);
+}
+
+/* 🎨 SVG Wrapper Styles */
+.cheese-wrapper {
+  width: 420px;
+  height: 420px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ✨ Hover Effects */
+.cheese-wrapper:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 8px 16px rgba(139, 69, 19, 0.3);
+}
+
+/* 🎯 Animation Keyframes */
+@keyframes mouseJump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes cheeseGlow {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50% { filter: brightness(1.2) saturate(1.1); }
+}
+
+@keyframes pirateFloat {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+/* 🎬 Animation Classes */
+.mouse-animation {
+  animation: mouseJump 1s ease-in-out infinite;
+}
+
+.cheese-glow {
+  animation: cheeseGlow 2s ease-in-out infinite;
+}
+
+.cheese-wrapper object {
+  width: 100%;
+  height: 100%;
+  animation: pirateFloat 4s ease-in-out infinite;
+}

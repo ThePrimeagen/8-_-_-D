@@ -1,0 +1,37 @@
+<!-- 🧀 Swiss Cheese SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" class="cheese-svg">
+  <defs>
+    <!-- 🎨 Cheese styling -->
+    <style>
+      .cheese-body { fill: #FFD700; }
+      .cheese-hole { fill: #FFA500; }
+      .mouse-body { fill: #808080; }
+      .mouse-ear { fill: #696969; }
+      .mouse-eye { fill: #000000; }
+      .mouse-smile { fill: none; stroke: #000000; stroke-width: 2; }
+      .treasure-map { fill: #8B4513; opacity: 0.2; }
+    </style>
+  </defs>
+  
+  <!-- 🧀 Swiss Cheese base with holes -->
+  <g class="cheese-glow">
+    <path class="cheese-body" d="M50,50 h320 v320 h-320 Z"/>
+    <!-- 🕳️ Classic Swiss holes -->
+    <circle class="cheese-hole" cx="120" cy="150" r="30"/>
+    <circle class="cheese-hole" cx="250" cy="180" r="25"/>
+    <circle class="cheese-hole" cx="180" cy="280" r="35"/>
+    <!-- 🗺️ Treasure map pattern -->
+    <path class="treasure-map" d="M100,100 l50,0 l0,50 l-50,0 Z"/>
+    <path class="treasure-map" d="M200,200 l40,0 l0,40 l-40,0 Z"/>
+  </g>
+  
+  <!-- 🐭 Ecstatic mouse -->
+  <g class="mouse-animation" transform="translate(320,300)">
+    <ellipse class="mouse-body" cx="0" cy="0" rx="25" ry="20"/>
+    <circle class="mouse-ear" cx="-15" cy="-15" r="10"/>
+    <circle class="mouse-ear" cx="15" cy="-15" r="10"/>
+    <circle class="mouse-eye" cx="-8" cy="-5" r="3"/>
+    <circle class="mouse-eye" cx="8" cy="-5" r="3"/>
+    <path class="mouse-smile" d="M-10,5 Q0,15 10,5"/>
+  </g>
+</svg>
