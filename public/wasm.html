@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WASM Handsome Man</title>
+  <style>
+    pre {
+      font-family: monospace;
+      white-space: pre;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px auto;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+  <pre id="output"></pre>
+  <script>
+    var Module = {
+      print: function(text) {
+        const output = document.getElementById('output');
+        output.textContent += text + "\n";
+      },
+      printErr: function(text) {
+        console.error(text);
+      },
+      onRuntimeInitialized: function() {
+        Module._main();
+      }
+    };
+  </script>
+  <script src="wasm/handsome.js"></script>
+</body>
+</html>
