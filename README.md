@@ -89,6 +89,7 @@ emcc handsome.c -o handsome.html -s NO_EXIT_RUNTIME=1 -s "EXPORTED_RUNTIME_METHO
 
 ## Maintainers
 - **cyber_absolution** - Core Maintainer
+- **PirateSoftware** - Core Maintainer
 
 ## Credits
 Special thanks to:
