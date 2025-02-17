@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path fill="#FFD700" d="M10,90 L90,90 L90,30 C90,20 80,10 70,10 L30,10 C20,10 10,20 10,30 Z"/>
+  <circle fill="#FFA500" cx="30" cy="40" r="5"/>
+  <circle fill="#FFA500" cx="50" cy="60" r="5"/>
+  <circle fill="#FFA500" cx="70" cy="30" r="5"/>
+  <circle fill="#FFA500" cx="40" cy="70" r="5"/>
+</svg>

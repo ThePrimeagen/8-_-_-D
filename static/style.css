@@ -1,0 +1,171 @@
+.bg-dark {
+    background: #1a1a1a url('/cheese.svg') repeat;
+    background-size: 50px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.cheese-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/cheese.svg') repeat;
+    opacity: 0.1;
+    z-index: -1;
+    animation: cheese-float 20s linear infinite;
+}
+
+@keyframes cheese-float {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#g {
+    display: inline-grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    background: #2a2a2a url('/cheese.svg') center/200% repeat;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+#g::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: url('/cheese.svg') center/50px repeat;
+    opacity: 0.1;
+    animation: cheese-float 15s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 12px;
+}
+
+.c {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.c::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/cheese.svg') center/contain no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+button {
+    background: #333 url('/cheese.svg') center/contain no-repeat;
+    border: 2px solid #FFD700;
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/cheese.svg') center/30% no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+button:hover {
+    background: #444;
+    transform: scale(1.1);
+    border-color: #FFA500;
+}
+
+.cheese-border {
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    border: 4px solid #FFD700;
+    border-radius: 15px;
+}
+
+.cheese-corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    animation: cheese-spin 4s linear infinite;
+}
+
+.cheese-tl { top: -20px; left: -20px; }
+.cheese-tr { top: -20px; right: -20px; }
+.cheese-bl { bottom: -20px; left: -20px; }
+.cheese-br { bottom: -20px; right: -20px; }
+
+@keyframes cheese-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#p {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    position: relative;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+#p::after {
+    content: '🧀';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 24px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

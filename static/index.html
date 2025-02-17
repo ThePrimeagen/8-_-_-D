@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bussy Pirate Tetris</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-dark" hx-ext="ws" ws-connect="/ws">
+    <div class="cheese-background"></div>
+    <div class="cheese-border">
+        <img src="/cheese.svg" class="cheese-corner cheese-tl" alt="Cheese"/>
+        <img src="/cheese.svg" class="cheese-corner cheese-tr" alt="Cheese"/>
+        <img src="/cheese.svg" class="cheese-corner cheese-bl" alt="Cheese"/>
+        <img src="/cheese.svg" class="cheese-corner cheese-br" alt="Cheese"/>
+        <div class="container">
+        <h1>🧀 Cheesy Tetris 🧀</h1>
+        <img src="/cheese.svg" class="cheese-logo" alt="Cheese" style="width: 50px; height: 50px; margin: 10px;"/>
+        
+        <div id="g" 
+             hx-get="/b" 
+             hx-trigger="every 1s, ws:piece-moved"
+             hx-swap="innerHTML"
+             ws-send>
+        </div>
+
+        <div class="controls" 
+             hx-target="#g">
+            <button hx-post="/m/l">⬅️</button>
+            <button hx-post="/m/r">➡️</button>
+            <button hx-post="/m/d">⬇️</button>
+            <button hx-post="/m/t">🔄</button>
+        </div>
+
+        <div id="p" 
+             hx-get="/p" 
+             hx-trigger="every 2s"
+             hx-swap="innerHTML">
+        </div>
+    </div>
+    </div>
+</body>
+</html>
