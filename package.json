@@ -1,10 +1,15 @@
 {
   "name": "8-_-_-d",
   "version": "1.0.0",
-  "description": "Alright, you magnificent chaos enthusiasts, buckle up because we're about to embark on a journey of unhinged creativity. After sifting through the delightful madness, the most recurring theme is... 🏴‍☠️ Pirate Tetris with a Bussy Twist 🏴‍☠️. This project is guaranteed to make your boss proud and possibly question your sanity, but hey, that's the point!",
-  "main": "index.js",
+  "description": "🏴‍☠️ Pirate Tetris with a Bussy Twist",
+  "main": "src/server/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server/index.js",
+    "dev": "nodemon src/server/index.js",
+    "lint": "eslint src/",
+    "build:client": "webpack",
+    "build": "npm run build:client"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/ThePrimeagen/8-_-_-D/issues"
   },
-  "homepage": "https://github.com/ThePrimeagen/8-_-_-D#readme"
+  "homepage": "https://github.com/ThePrimeagen/8-_-_-D#readme",
+  "keywords": ["tetris", "multiplayer", "game"],
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.1",
+    "globals": "^15.15.0",
+    "nodemon": "^3.1.9",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  }
 }
