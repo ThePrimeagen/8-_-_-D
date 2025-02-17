@@ -160,7 +160,12 @@ const clearLines = () => {
   }
   
   if (linesCleared > 0) {
-    broadcastLinesClear(linesCleared);
+    gameState.players.forEach((player) => {
+      player.socket.send(JSON.stringify({
+        type: 'linesCleared',
+        data: { lines: linesCleared }
+      }));
+    });
   }
 };
 
