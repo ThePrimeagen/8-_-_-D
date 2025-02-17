@@ -14,8 +14,23 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
-// 📁 Serve static files
-app.use(express.static(path.join(__dirname, '../../public')));
+// 📁 Serve static files with correct MIME types
+const mimeTypes = {
+  '.html': 'text/html',
+  '.css': 'text/css',
+  '.js': 'application/javascript',
+  '.wasm': 'application/wasm',
+  '.svg': 'image/svg+xml'
+};
+
+app.use(express.static(path.join(__dirname, '../../public'), {
+  setHeaders: (res, filePath) => {
+    const ext = path.extname(filePath);
+    if (mimeTypes[ext]) {
+      res.setHeader('Content-Type', mimeTypes[ext]);
+    }
+  }
+}));
 
 // 🎮 Game Logic
 const updateGameState = (board, piece, movement) => {
