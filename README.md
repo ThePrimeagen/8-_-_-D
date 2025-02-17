@@ -23,7 +23,21 @@ Set sail on a high-seas adventure with \"Bussy Pirate Tetris Extravaganza,\" a w
 
 So, grab your eye patches and banana peels, and let's create a masterpiece that will leave everyone questioning their reality. Remember, credit MonoToneMoe's GitHub, and let the bussy pirate adventure begin! 🏴‍☠️🍌
 
+## ASCII Art Gallery
+```
+    /\___/\   🧀
+   (  o o  )  
+   (  =^=  ) 
+    (______)  
+  
+   Cheese Hunter
+```
+
+## Maintainers
+- **cyber_absolution** - Core Maintainer
+
 ## Credits
 Special thanks to:
 - **MonoToneMoe** - For providing the inspiration for this project through their GitHub work
+- **cyber_absolution** - For maintaining and enhancing the project
 
