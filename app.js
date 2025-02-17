@@ -13,6 +13,8 @@ const mimeTypes = {
   '.html': 'text/html',
   '.css': 'text/css',
   '.svg': 'image/svg+xml',
+  '.js': 'application/javascript',
+  '.wasm': 'application/wasm'
 };
 
 const server = http.createServer((req, res) => {
