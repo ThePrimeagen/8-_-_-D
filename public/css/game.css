@@ -1,0 +1,91 @@
+/* 🎮 Game Board */
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(20, 30px);
+  gap: 1px;
+  background: #333;
+  padding: 10px;
+  border: 4px solid #555;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+/* 📦 Game Cells */
+.cell {
+  width: 30px;
+  height: 30px;
+  background: #222;
+  border-radius: 4px;
+  transition: background-color 0.1s ease;
+}
+
+/* 🎨 Filled Cell */
+.cell.filled {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 🌟 Game Container */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #1a1a1a;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 🏆 Score Display */
+.score {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #ffd700;
+}
+
+/* 🎯 Controls Info */
+.controls {
+  margin-top: 20px;
+  padding: 15px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.controls h2 {
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.controls ul {
+  list-style: none;
+  padding: 0;
+}
+
+.controls li {
+  margin: 5px 0;
+  color: #ddd;
+}
+
+/* 💀 Game Over Screen */
+.game-over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  display: none;
+}
+
+.game-over.visible {
+  display: flex;
+}

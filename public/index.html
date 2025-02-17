@@ -3,11 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>🎮 Multiplayer Tetris</title>
-  <link rel="stylesheet" href="/css/tetris.css">
+  <link rel="stylesheet" href="/css/game.css">
 </head>
 <body>
-  <!-- 🎮 Game Board -->
-  <div id="game-board"></div>
+  <div class="game-container">
+    <!-- 🏆 Score -->
+    <div class="score">Score: <span id="score">0</span></div>
+    
+    <!-- 🎮 Game Board -->
+    <div id="game-board"></div>
+    
+    <!-- 🎯 Controls -->
+    <div class="controls">
+      <h2>Controls</h2>
+      <ul>
+        <li>⬅️ ➡️ Move Left/Right</li>
+        <li>⬇️ Drop</li>
+        <li>⬆️ Rotate Right</li>
+        <li>Z Rotate Left</li>
+      </ul>
+    </div>
+    
+    <!-- 💀 Game Over Screen -->
+    <div id="game-over" class="game-over">
+      <h1>Game Over!</h1>
+      <p>Score: <span id="final-score">0</span></p>
+    </div>
+  </div>
+  
   <script src="/dist/bundle.js"></script>
 </body>
 </html>
