@@ -38,6 +38,23 @@
   font-family: 'Arial', sans-serif;
 }
 
+/* 🔄 Restart Button */
+.restart-button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #ffd700;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.restart-button:hover {
+  background: #ffed4a;
+}
+
 /* 🏆 Score Display */
 .score {
   font-size: 24px;

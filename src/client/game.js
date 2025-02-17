@@ -11,6 +11,15 @@ class Game {
     this.initBoard();
     this.initSocket();
     this.initControls();
+    this.initRestartButton();
+  }
+  
+  // 🔄 Initialize Restart Button
+  initRestartButton() {
+    const restartButton = document.getElementById('restart-button');
+    restartButton.addEventListener('click', () => {
+      this.socket.send(JSON.stringify({ type: 'restart' }));
+    });
   }
 
   // 🎨 Initialize Game Board
@@ -66,7 +75,7 @@ class Game {
     switch(type) {
       case 'gameState':
         if (data && data.board) {
-          this.updateBoard(data.board);
+          this.updateBoard(data.board, data.currentPiece);
         } else {
           console.error('Invalid game state data received:', data);
         }
@@ -81,24 +90,50 @@ class Game {
   }
 
   // 🔄 Update Board
-  updateBoard(board) {
+  updateBoard(board, currentPiece) {
     if (!Array.isArray(board)) {
       console.error('Invalid board data received:', board);
       return;
     }
     
+    // Clear all cells first
+    this.cells.forEach(row => {
+      row.forEach(cell => {
+        cell.style.backgroundColor = '';
+        cell.classList.remove('filled');
+      });
+    });
+    
+    // Draw the board
     board.forEach((row, y) => {
       if (!Array.isArray(row)) {
         console.error('Invalid row data received:', row);
         return;
       }
       row.forEach((cell, x) => {
-        if (this.cells[y] && this.cells[y][x]) {
-          this.cells[y][x].style.backgroundColor = cell || '';
-          this.cells[y][x].classList.toggle('filled', !!cell);
+        if (this.cells[y] && this.cells[y][x] && cell) {
+          this.cells[y][x].style.backgroundColor = cell;
+          this.cells[y][x].classList.add('filled');
         }
       });
     });
+    
+    // Draw the current piece
+    if (currentPiece && currentPiece.shape) {
+      const { shape, x, y, color } = currentPiece;
+      shape.forEach((row, pieceY) => {
+        row.forEach((cell, pieceX) => {
+          if (cell) {
+            const boardY = y + pieceY;
+            const boardX = x + pieceX;
+            if (this.cells[boardY] && this.cells[boardY][boardX]) {
+              this.cells[boardY][boardX].style.backgroundColor = color;
+              this.cells[boardY][boardX].classList.add('filled');
+            }
+          }
+        });
+      });
+    }
   }
 
   // 📤 Send Input to Server
