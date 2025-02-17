@@ -1,0 +1,25 @@
+.tetris-matrix {
+  display: grid;
+  grid-template-columns: repeat(8, 40px);
+  grid-template-rows: repeat(8, 40px);
+  gap: 2px;
+  padding: 8px;
+  background-color: #0000FF;
+  width: fit-content;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tetris-cell {
+  width: 40px;
+  height: 40px;
+  background-color: #FFFFFF;
+  border: 2px solid #FFA500;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.tetris-cell:hover {
+  background-color: #F0F0F0;
+}
